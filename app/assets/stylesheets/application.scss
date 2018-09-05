@@ -1,0 +1,25 @@
+@import "bootstrap";
+
+.navbar {
+	height: 80px;
+	background-color: #AFE4E8;
+}
+
+.nav-link {
+	color: #FFFEFA;
+}
+
+.nav-link:hover {
+	color: #0cc;
+}
+
+body {
+	background-color: #FFFEFA;
+}
+
+.home_image {
+	width: 500px;
+	height: 500px;
+	display: block;
+ 	margin: 50px auto;
+}
