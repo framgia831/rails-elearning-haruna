@@ -7,13 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Megrim|Raleway+Dots" rel="stylesheet">
   </head>
 
   <body>
 
     <%= render "layouts/header" %>
-
-    <%= image_tag("gem.png", class: "home_image") %>
 
     <%= yield %>
   </body>
