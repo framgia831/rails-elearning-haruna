@@ -43,30 +43,30 @@ body {
 
 .sign_up {
 	font-family: 'Raleway Dots', cursive;
-    display: inline-block;
-    text-decoration: none;
-    background-color: #AFE4E8;
-    color: #FFFEFA;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align: middle;
-    overflow: hidden;
-    box-shadow: 0px 0px 0px 5px #AFE4E8;
-    border: dashed 1px #FFFEFA;
-    transition: .4s;
-    position: absolute;
-    top: 67%;
-    left: 47%;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #AFE4E8;
+  color: #FFFEFA;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #AFE4E8;
+  border: dashed 1px #FFFEFA;
+  transition: .4s;
+  position: absolute;
+  top: 67%;
+  left: 47%;
 }
 
 .sign_up:hover {
-    background-color: #0cc;
-    box-shadow: 0px 0px 0px 5px #0cc;
-    text-decoration: none;
-    color: #FFFEFA;
+  background-color: #0cc;
+  box-shadow: 0px 0px 0px 5px #0cc;
+  text-decoration: none;
+  color: #FFFEFA;
 }
 
 
@@ -88,4 +88,21 @@ body {
 .title {
 	font-family: 'Megrim', cursive;
 	text-align: center;
+}
+
+.user_image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	box-shadow: 0 0 2px #C7C6C7;
+}
+
+.user_name {
+	font-size: 25px;
+	padding: 20px;
+}
+
+.frame {
+	width: 50%;
+	height: 50%;
 }
