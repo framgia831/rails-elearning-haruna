@@ -7,13 +7,19 @@
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Fredericka+the+Great|Megrim|Raleway+Dots" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Fredericka+the+Great|Megrim|Raleway+Dots|Nixie+One|Poiret+One" rel="stylesheet">
     </head>
 
     <body>
         <%= render "layouts/header" %>
 
         <div class="container pt-4">
+
+            <% if notice %>
+                <div class="alert alert-info">
+                    <%= notice %>
+                </div>
+            <% end %>
         
             <%= yield %>
 

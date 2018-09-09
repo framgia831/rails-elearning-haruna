@@ -6,6 +6,7 @@
 .navbar {
 	height: 80px;
 	background-color: #AFE4E8;
+	font-weight: bold;
 }
 
 .nav-link {
@@ -22,6 +23,8 @@
 
 body {
 	background-color: #FFFEFA;
+	color: #48453D;
+	font-family: 'Poiret One', cursive;
 }
 
 .home_image {
@@ -42,7 +45,6 @@ body {
 }
 
 .sign_up {
-	font-family: 'Raleway Dots', cursive;
   display: inline-block;
   text-decoration: none;
   background-color: #AFE4E8;
@@ -105,4 +107,42 @@ body {
 .frame {
 	width: 50%;
 	height: 50%;
+}
+
+.btn_following {
+	width: 160px;
+	height: 45px;
+}
+
+
+/* Index */
+
+.index {
+	width: 600px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.index_each {
+	padding: 10px;
+}
+
+.index_list {
+	font-size: 20px;
+	text-decoration: none;
+	transition: .4s;
+	color: #8D8980;
+}
+
+.index_list:hover {
+	text-decoration: none;
+	color: #0cc;
+}
+
+.index_image {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	box-shadow: 0 0 2px #C7C6C7;
+	margin-right: 20px;
 }
