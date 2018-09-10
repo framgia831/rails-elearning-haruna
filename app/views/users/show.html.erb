@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-md-6 p-5 mx-auto text-center">
+		
+		<% if @user.image_name? %>
+			<%= image_tag @user.image_name.url, class: "user_image" %>
+		<% else %>
+			<%= image_tag "user_images/default_user.png", class: "user_image" %>
+		<% end %>
+
+		<div class="user_name">
+			<%= @user.name %>
+		</div>
+
+		<%#= image_tag("frame.png", class: "frame d-block mx-auto") %>
+		<hr style="width: 200px;">
+
+		<div class="d-inline-block px-4 mt-2">
+			<%= @user.following.count %>
+			<p>Following</p>
+		</div>
+		<div class="d-inline-block px-4 mt-2">
+			<%= @user.followers.count %>
+			<p>Followers</p>
+		</div>
+
+		<div class="mt-4">
+			<% unless current_user == @user %>
+		 		<% if relationship = current_user.relationship(@user) %>
+		 			<%= button_to "Unfollow", relationship_path(relationship), method: :delete, class: 'btn btn-info btn_settings' %>
+		 		<% else %>
+		 			<%= button_to "Follow", relationships_path, params: {followed_id: @user.id}, class: 'btn btn-outline-info btn_settings' %>
+		 		<% end %>
+		 	<% end %>
+		</div>
+
+		<div class="mt-4">
+			<% if current_user == @user %>
+				<%= link_to "Edit Profile", edit_user_path, class: 'btn btn-info btn_settings' %>
+			<% end %>
+		</div>
+		
+	</div>
+
+	<div class="col-md-6 p-5">
+		<h1 class="title">Activities</h1>
+
+		<%# @user.microposts.each do |micropost| %>
+			<div class="media p-2">
+				<div class="media-body">
+					<h5><%#= link_to micropost.user.name, user_path(micropost.user) %></h5>
+					<%#= micropost.content %>
+				</div>
+			</div>
+		<%# end %>
+	</div>
+</div>

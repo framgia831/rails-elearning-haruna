@@ -1,8 +1,12 @@
 @import "bootstrap";
 
+
+/* Header */
+
 .navbar {
 	height: 80px;
 	background-color: #AFE4E8;
+	font-weight: bold;
 }
 
 .nav-link {
@@ -14,8 +18,13 @@
 	color: #0cc;
 }
 
+
+/* Homepage */
+
 body {
 	background-color: #FFFEFA;
+	color: #48453D;
+	font-family: 'Poiret One', cursive;
 }
 
 .home_image {
@@ -36,32 +45,34 @@ body {
 }
 
 .sign_up {
-	font-family: 'Raleway Dots', cursive;
-    display: inline-block;
-    text-decoration: none;
-    background-color: #AFE4E8;
-    color: #FFFEFA;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align: middle;
-    overflow: hidden;
-    box-shadow: 0px 0px 0px 5px #AFE4E8;
-    border: dashed 1px #FFFEFA;
-    transition: .4s;
-    position: absolute;
-    top: 67%;
-    left: 47%;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #AFE4E8;
+  color: #FFFEFA;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #AFE4E8;
+  border: dashed 1px #FFFEFA;
+  transition: .4s;
+  position: absolute;
+  top: 67%;
+  left: 47%;
 }
 
 .sign_up:hover {
-    background-color: #0cc;
-    box-shadow: 0px 0px 0px 5px #0cc;
-    text-decoration: none;
-    color: #FFFEFA;
+  background-color: #0cc;
+  box-shadow: 0px 0px 0px 5px #0cc;
+  text-decoration: none;
+  color: #FFFEFA;
 }
+
+
+/* Footer */
 
 .footer_border {
 	color: #C7C6C7;
@@ -71,4 +82,67 @@ body {
 	color: #C7C6C7;
 	text-align: right;
 	font-family: 'Cormorant Garamond', serif;
+}
+
+
+/* Each Page */
+
+.title {
+	font-family: 'Megrim', cursive;
+	text-align: center;
+}
+
+.user_image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	box-shadow: 0 0 2px #C7C6C7;
+}
+
+.user_name {
+	font-size: 25px;
+	padding: 20px;
+}
+
+.frame {
+	width: 50%;
+	height: 50%;
+}
+
+.btn_settings {
+	width: 160px;
+	height: 45px;
+}
+
+
+/* Index */
+
+.index {
+	width: 600px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.index_each {
+	padding: 10px;
+}
+
+.index_list {
+	font-size: 20px;
+	text-decoration: none;
+	transition: .4s;
+	color: #8D8980;
+}
+
+.index_list:hover {
+	text-decoration: none;
+	color: #0cc;
+}
+
+.index_image {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	box-shadow: 0 0 2px #C7C6C7;
+	margin-right: 20px;
 }
