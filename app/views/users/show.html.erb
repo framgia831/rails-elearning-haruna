@@ -1,7 +1,11 @@
 <div class="row">
 	<div class="col-md-6 p-5 mx-auto text-center">
-			
-		<%= image_tag("user_images/#{@user.image_name}", class: "user_image") %>
+		
+		<% if @user.image_name? %>
+			<%= image_tag @user.image_name.url, class: "user_image" %>
+		<% else %>
+			<%= image_tag "user_images/default_user.png", class: "user_image" %>
+		<% end %>
 
 		<div class="user_name">
 			<%= @user.name %>
@@ -22,11 +26,17 @@
 		<div class="mt-4">
 			<% unless current_user == @user %>
 		 		<% if relationship = current_user.relationship(@user) %>
-		 			<%= button_to "Unfollow", relationship_path(relationship), method: :delete, class: 'btn btn-info btn_following' %>
+		 			<%= button_to "Unfollow", relationship_path(relationship), method: :delete, class: 'btn btn-info btn_settings' %>
 		 		<% else %>
-		 			<%= button_to "Follow", relationships_path, params: {followed_id: @user.id}, class: 'btn btn-outline-info btn_following' %>
+		 			<%= button_to "Follow", relationships_path, params: {followed_id: @user.id}, class: 'btn btn-outline-info btn_settings' %>
 		 		<% end %>
 		 	<% end %>
+		</div>
+
+		<div class="mt-4">
+			<% if current_user == @user %>
+				<%= link_to "Edit Profile", edit_user_path, class: 'btn btn-info btn_settings' %>
+			<% end %>
 		</div>
 		
 	</div>

@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+	mount_uploader :image_name, ImageNameUploader
+
+	has_many :lessons
+
 	has_secure_password
 
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
