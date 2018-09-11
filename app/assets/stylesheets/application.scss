@@ -146,3 +146,26 @@ body {
 	box-shadow: 0 0 2px #C7C6C7;
 	margin-right: 20px;
 }
+
+.index_table {
+	border-collapse: collapse;
+  width: 100%;
+  word-break: break-word;
+}
+
+
+/* Category */
+
+.category_list {
+	font-family: 'Megrim', serif;
+	font-weight: bold;
+	font-size: 23px;
+	text-decoration: none;
+	transition: .4s;
+	color: #8D8980;
+}
+
+.category_list:hover {
+	text-decoration: none;
+	color: #0cc;
+}
