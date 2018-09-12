@@ -3,8 +3,8 @@ class Admin::WordsController < ApplicationController
 	include UsersHelper
 
 	def index
-		@words = Word.all
 		@category = Category.find(params[:category_id])
+		@words = @category.words.all
 	end
 
 	def new
