@@ -1,24 +1,23 @@
 <div class="row">
 	<div class="offset-md-3 col-md-6 text-center">
-		<h1 class="title">Categories/Words</h1>
+		<h1 class="title">Categories / Words</h1>
 		<%= link_to "New Category", new_admin_category_path, class: "btn btn-info btn_settings mt-3" %>
 	</div>
 
 	<div class="row index">
 		<table class="table table-bordered index_table">
 			<tr>
-				<th>Title</th>
-				<th>Description</th>
-				<th>Settings</th>
+				<th width="100">Title</th>
+				<th width="270">Description</th>
+				<th width="170">Settings</th>
 			</tr>
 			
 			<% @categories.each do |category| %>
 				<tr>
-					<td width="100"><%= link_to category.title, "#", class: "category_list" %></td>
-					<td width="300"><%= category.description %></td>
-					<td width="200">
+					<td width="100"><%= link_to category.title, admin_category_words_path(category), class: "category_list" %></td>
+					<td width="270"><%= category.description %></td>
+					<td width="170">
 						<%= link_to "edit", edit_admin_category_path(category), class: "index_list" %> /
-						<%= link_to "words", "#", class: "index_list" %> /
 						<%= link_to "delete", admin_category_path(category), method: :delete, class: "index_list" %>
 					</td>
 				</tr>

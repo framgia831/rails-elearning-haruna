@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1 class="title"><%= @category.title %></h1>
+
+		<div class="row index">
+			<table class="table table-bordered index_table">
+				<tr>
+					<th width="270">Word</th>
+					<th width="270">Choices</th>
+				</tr>
+
+				<tr>
+					<td width="270"><%= @word.content %></td>
+					<%# @choices.each do |choice| %>
+						<td width="270"><%#= choice.content %></td>
+					<%# end %>
+				</tr>
+
+			</table>
+
+			<%= link_to "Back", admin_category_words_path(@category), class: "index_list" %>
+		</div>
+
+	</div>
+</div>

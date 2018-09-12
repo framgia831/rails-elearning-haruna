@@ -1,0 +1,50 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1 class="title">Edit Words</h1>
+
+		<%= form_for [:admin, @category, @word], method: :patch do |f| %>
+			
+			<% if @word.errors.any? %>
+				<div class="alert alert-danger">
+					<ul class="m-0">
+						<% @word.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+		
+			<div class="my-5">
+				<div class="form-group">
+					<%= f.label :word %>
+					<%= f.text_field :content, class: "form-control" %>
+				</div>
+
+
+			<%#= form_for [:admin, @category, @choice], method: :patch do |f| %>
+
+				<!-- <div class="form-group">
+					<%#= f.label :choices %>
+					<%#= f.text_field :content, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%#= f.text_field :content, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%#= f.text_field :content, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%#= f.text_field :content, class: "form-control" %>
+				</div> -->
+
+			<%# end %>
+
+				<div class="mt-4">
+					<%= f.submit "Edit words", class: "btn btn-info form-control" %>
+				</div>
+			</div>
+
+		<% end %>
+
+	</div>
+</div>
