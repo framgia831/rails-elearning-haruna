@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1 class="title"><%= @category.title %></h1>
+
+		<div class="row index">
+			<table class="table table-bordered index_table">
+				<tr>
+					<th>Word</th>
+					<th>Answer</th>
+					<th>Settings</th>
+				</tr>
+
+				<tr>
+					<%# @words.each do |word| %>
+						<td width="200"><%#= word.content %> test</td>
+					<%# end %>
+					<%# @answers.each do |answer| %>
+						<td width="200"><%#= answer.content %> test</td>
+					<%# end %>
+						<td width="200">
+							<%= link_to "edit", edit_admin_category_word_path(@category, @word), class: "index_list" %> /
+							<%= link_to "delete", admin_category_word_path(@category, @word), method: :delete, class: "index_list" %>
+						</td>
+				</tr>
+
+			</table>
+		</div>
+
+	</div>
+</div>
