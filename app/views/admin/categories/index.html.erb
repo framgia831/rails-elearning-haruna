@@ -14,11 +14,11 @@
 			
 			<% @categories.each do |category| %>
 				<tr>
-					<td width="100"><%= link_to category.title, "#", class: "category_list" %></td>
+					<td width="100"><%= link_to category.title, admin_category_words_path(category), class: "category_list" %></td>
 					<td width="300"><%= category.description %></td>
 					<td width="200">
+						<%= link_to "add", new_admin_category_word_path(category), class: "index_list" %> /
 						<%= link_to "edit", edit_admin_category_path(category), class: "index_list" %> /
-						<%= link_to "words", "#", class: "index_list" %> /
 						<%= link_to "delete", admin_category_path(category), method: :delete, class: "index_list" %>
 					</td>
 				</tr>
