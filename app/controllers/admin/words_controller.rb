@@ -4,21 +4,19 @@ class Admin::WordsController < ApplicationController
 
 	def index
 		@words = Word.all
-		@answers = Answer.all
 		@category = Category.find(params[:category_id])
 	end
 
 	def new
 		@category = Category.find(params[:category_id])
 		@word = @category.words.build
-		@choice = @word.choices.build
 	end
 
 	def create
 		@category = Category.find(params[:category_id])
 		@word = @category.words.build(word_params)
-		@choice = @word.choices.build(choice_params)
-		if @word.save && @choice.save
+
+		if @word.save
 			flash[:notice] = "Sucessfully created!"
 			redirect_to admin_category_words_path(@category)
 		else
@@ -27,33 +25,33 @@ class Admin::WordsController < ApplicationController
 	end
 
 	def show
-		@word = Word.find(params[:category_id])
-		@choices = Choice.find(params[:word_id])
 		@category = Category.find(params[:category_id])
+		@word = Word.find(params[:id])
 	end
 
 	def edit
-		@word = Word.find(params[:category_id])
-		@choice = Choice.find(params[:word_id])
+		@category = Category.find(params[:category_id])
+		@word = Word.find(params[:id])
 	end
 
 	def update
-		@word = Word.find(params[:category_id])
-		@choice = Choice.find(params[:word_id])
 		@category = Category.find(params[:category_id])
-		if @word.update(word_params) || @choice.upcate(choice_params)
+		@word = Word.find(params[:id])
+
+		if @word.update(word_params)
 			flash[:notice] = "Sucessfully saved!"
-			redirect_to admin_category_word_path(@category)
+			redirect_to admin_category_words_path(@category)
 		else
 			render "edit"
 		end
 	end
 
 	def destroy
-		@word = Word.find(params[:category_id])
+		@category = Category.find(params[:category_id])
+		@word = Word.find(params[:id])
     @word.destroy
 
-    redirect_to admin_category_words_path(@category)
+    redirect_to admin_category_words_path
 	end
 
 	private
@@ -62,11 +60,11 @@ class Admin::WordsController < ApplicationController
 		end
 
 		def word_params
-			arams.require(:word).permit(:content)
+			params.require(:word).permit(:content)
 		end
 
-		def choice_params
-			arams.require(:choice).permit(:content)
-		end
+		# def choice_params
+		# 	params.require(:choice).permit(:content)
+		# end
 
 end

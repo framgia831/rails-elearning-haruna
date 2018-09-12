@@ -1,9 +1,11 @@
 class Word < ApplicationRecord
-	belongs_to :category, dependent: :destroy
+	belongs_to :category
 	
-	has_many :answers
-	has_many :choices
+	# has_many :answers
+	# has_many :choices
 
-	accepts_nested_attributes_for :choices
-	accepts_nested_attributes_for :answers
+	# accepts_nested_attributes_for :choices
+	# accepts_nested_attributes_for :answers
+
+	validates :content, presence: true
 end
