@@ -1,21 +1,27 @@
 <div class="row">
-	<div class="offset-md-3 col-md-6 text-center">
+	<div class="offset-md-3 col-md-6">
 		<h1 class="title"><%= @category.title %></h1>
-		<%= link_to "New Words", new_admin_category_word_path(@category), class: "btn btn-info btn_settings mt-3" %>
-	</div>
+		<div class="text-center">
+			<%= link_to "New Words", new_admin_category_word_path(@category), class: "btn btn-info btn_settings mt-3" %>
+		</div>
 
 		<div class="row index">
 			<table class="table table-bordered index_table">
 				<tr>
-					<th width="270">Word</th>
-					<th width="270">Settings</th>
+					<th width="180">Word</th>
+					<th width="180">Answer</th>
+					<th width="180">Settings</th>
 				</tr>
 
 				<% @words.each do |word| %>
 					<tr>
-						<td width="270"><%= link_to word.content, admin_category_word_path(@category, word), class: "category_list" %></td>
-				
-						<td width="270">
+						<td width="180">
+							<%= link_to word.content, admin_category_word_path(@category, word), class: "category_list" %>
+						</td>
+						<td width="180">
+							<%= word.correct_answer.content %>
+						</td>
+						<td width="180">
 							<%= link_to "edit", edit_admin_category_word_path(@category, word), class: "index_list" %> /
 							<%= link_to "delete", admin_category_word_path(@category, word), method: :delete, class: "index_list" %>
 						</td>

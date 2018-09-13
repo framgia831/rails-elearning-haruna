@@ -12,8 +12,10 @@ Rails.application.routes.draw do
 
  namespace :admin do
  	resources :categories do
- 		resources :words
- 		resources :choices
+ 		resources :words do
+ 			resources :choices
+ 			resources :answers
+ 		end
  	end
  end
  

@@ -11,9 +11,13 @@
 
 				<tr>
 					<td width="270"><%= @word.content %></td>
-					<%# @choices.each do |choice| %>
-						<td width="270"><%#= choice.content %></td>
-					<%# end %>
+					<td width="270">
+						<ul class="choices_list">
+							<% @choices.each do |choice| %>
+								<li class="choices_content"><%= choice.content %></li>
+							<% end %>
+						</ul>
+					</td>
 				</tr>
 
 			</table>
