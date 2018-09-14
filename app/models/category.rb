@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
 	has_many :lessons
-	has_many :words
+	has_many :words, dependent: :destroy
 
 	accepts_nested_attributes_for :words
 
