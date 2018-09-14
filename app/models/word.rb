@@ -9,7 +9,6 @@ class Word < ApplicationRecord
 
 	validates :content, presence: true
 	validate :one_correct
-	validates :correct, acceptance: true
 
 	def one_correct
 		unless choices.map { |c| c.correct }.count(true) == 1
