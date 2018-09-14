@@ -13,7 +13,7 @@ class Word < ApplicationRecord
 
 	def one_correct
 		unless choices.map { |c| c.correct }.count(true) == 1
-			errors.add(:choices, "Should be one answer")
+			errors.add(:choices, "should have one correct answer")
 		end
 	end
 
