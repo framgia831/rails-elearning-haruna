@@ -29,7 +29,6 @@ User.create!(name: "Haruna",
 
 		random = rand(0..2)
 		word.choices[random].correct = true
-		p word
 		word.save
 	end
 end
