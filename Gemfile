@@ -9,6 +9,7 @@ gem 'font-awesome-sass', '~> 5.3.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '1.2.2'
 gem 'mini_magick', '4.7.0'
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
