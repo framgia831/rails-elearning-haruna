@@ -2,42 +2,7 @@
 	<div class="offset-md-3 col-md-6">
 		<h1 class="title">Edit Words</h1>
 
-		<%= form_for [:admin, @category, @word] do |f| %>
-			
-			<% if @word.errors.any? %>
-				<div class="alert alert-danger">
-					<ul class="m-0">
-						<% @word.errors.full_messages.each do |msg| %>
-							<li><%= msg %></li>
-						<% end %>
-					</ul>
-				</div>
-			<% end %>
-		
-			<div class="my-5">
-				<div class="form-group">
-					<%= f.label :word %>
-					<%= f.text_field :content, class: "form-control" %>
-				</div>
-
-					<%= f.label :choices %>
-
-			<%= f.fields_for :choices do |f| %>
-			
-				<div class="form-group choices_box">
-					<%= f.text_field :content, class: "form-control" %>
-				</div>
-				<%= f.check_box :correct, class: "mb-3" %>
-				<%= f.label :correct, "This is the answer!" %>
-				
-			<% end %>
-
-				<div class="mt-4">
-					<%= f.submit "Edit words", class: "btn btn-info form-control" %>
-				</div>
-			</div>
-
-		<% end %>
+		<%= render "form", button_message: "Edit words" %>
 
 	</div>
 </div>

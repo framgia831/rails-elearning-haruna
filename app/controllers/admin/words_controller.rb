@@ -28,7 +28,7 @@ class Admin::WordsController < ApplicationController
 	def show
 		@category = Category.find(params[:category_id])
 		@word = Word.find(params[:id])
-		@choices = @word.choices.all
+		@choices = @word.choices
 	end
 
 	def edit
