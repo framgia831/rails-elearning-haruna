@@ -12,6 +12,9 @@
                 <%= link_to "Users", users_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
+                <%= link_to "Lessons", categories_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
                 <%= link_to current_user.name, user_path(current_user), class: "nav-link" %>
             </li>
             <li>

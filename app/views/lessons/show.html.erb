@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1 class="title"><%= @category.title %></h1>
+
+		<div class="index">
+			<div class="lesson_word">
+				<%= @category.words %>
+			</div>
+			<%#= button_to @word.choices, class: "btn btn-info btn_settings" %>
+			<%= link_to "Back", "#", class: "index_list" %>
+		</div>
+	</div>
+</div>
