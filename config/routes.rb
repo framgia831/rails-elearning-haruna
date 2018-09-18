@@ -10,8 +10,10 @@ Rails.application.routes.draw do
 
  resources :users, except: :new
  resources :relationships, only: [:create, :destroy]
- resources :lessons, except: :index
- resources :answers
+
+ resources :lessons, except: :index do
+ 	resources :answers
+ end
 
  namespace :admin do
  	resources :categories do

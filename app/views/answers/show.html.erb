@@ -15,7 +15,7 @@
 				<% @words.each do |word| %>
 					<tr>
 						<td width="180">
-							test
+							<% word.correct_answer.correct %>
 						</td>
 						<td width="180">
 							<%= word.content %>
