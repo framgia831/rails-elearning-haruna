@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="offset-md-3 col-md-6">
-		<h1 class="title">Categories / Words</h1>
+		<h1 class="title">Administration</h1>
 		<div class="text-center">
 			<%= link_to "New Category", new_admin_category_path, class: "btn btn-info btn_settings mt-3" %>
 		</div>
@@ -24,6 +24,8 @@
 					</tr>
 				<% end %>
 			</table>
+
+			<%= link_to "Back", user_path(current_user), class: "index_list" %>
 		</div>
 	</div>
 </div>

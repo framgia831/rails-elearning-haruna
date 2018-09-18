@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1 class="title"><%= @category.title %></h1>
+
+		<div class="row index">
+
+
+		<table class="table table-bordered index_table">
+				<tr>
+					<th width="180">Result</th>
+					<th width="180">Word</th>
+					<th width="180">Answer</th>
+				</tr>
+
+				<% @lesson.answers.each do |answer| %>
+					<tr>
+						<td width="180" class="pl-4">
+							<% if answer.choice.correct? %>
+								<%= "○" %>
+							<% else %>
+								<%= "×" %>
+							<% end %>
+						</td>
+						<td width="180">
+							<%= answer.word.content %>
+						</td>
+						<td width="180">
+							<%= answer.word.correct_answer.content %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+		
+		<%= link_to "Back", categories_path, class: "index_list" %>
+	</div>
+</div>

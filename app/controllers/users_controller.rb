@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find_by(id: params[:id])
+		@admin_user = User.find_by(admin: true)
 	end
 
 	def edit
