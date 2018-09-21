@@ -15,7 +15,6 @@ class RelationshipsController < ApplicationController
 		relationship.activity.destroy
 		relationship.destroy
 
-
 		redirect_to user_url(relationship.followed_id)
 	end
 

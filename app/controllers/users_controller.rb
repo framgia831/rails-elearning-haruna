@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :require_login, except: [:new, :create]
 
 	def index
 		@users = User.all
@@ -40,5 +41,12 @@ class UsersController < ApplicationController
 		def user_params
 			params.require(:user).permit(:name, :email, :password, :password_confirmation, :image_name)
 		end
+
+    def require_login
+      unless current_user
+        flash[:notice] = "Please log in."
+        redirect_to root_url
+      end
+    end
 
 end

@@ -3,11 +3,7 @@
 
 		<h1 class="title">Dashboard</h1>
 		
-		<% if current_user.image_name? %>
-			<%= image_tag current_user.image_name.url, class: "dashboard_image" %>
-		<% else %>
-			<%= image_tag "user_images/default_user.png", class: "dashboard_image" %>
-		<% end %>
+		<%= user_image(current_user, class: "dashboard_image")%>
 
 		<div class="user_name mt-2">
 			<%= current_user.name %>

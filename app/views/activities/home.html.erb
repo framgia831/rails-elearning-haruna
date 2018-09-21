@@ -3,21 +3,17 @@
 
 		<h1 class="title">Dashboard</h1>
 		
-		<% if current_user.image_name? %>
-			<%= image_tag current_user.image_name.url, class: "dashboard_image" %>
-		<% else %>
-			<%= image_tag "user_images/default_user.png", class: "dashboard_image" %>
-		<% end %>
+		<%= user_image(current_user, class: "dashboard_image") %>
 
 		<div class="user_name mt-2">
 			<%= current_user.name %>
 		</div>
 	
 		<div class="mt-3">
-			<%= link_to "learned #{@user.words.count} words", activity_path(@user), class: "dashboard_list" %>
+			<%= link_to "learned #{current_user.answers.count} words", activity_path(current_user), class: "dashboard_list" %>
 		</div>
 		<div class="mt-3">
-			<%= link_to "learned #{@activity.count} lessons", categories_path, class: "dashboard_list" %>
+			<%= link_to "learned #{current_user.lessons.count} lessons", categories_path, class: "dashboard_list" %>
 		</div>
 
 		
@@ -27,33 +23,7 @@
 		<h1 class="title">Activities</h1>
 
 			<div class="activity">
-				<% @activities.each do |activity| %>
-						
-						<div class="media p-2">
-							<div class="media-body row">
-								<div class="col-md-8">
-									<% if activity.user.image_name? %>
-										<%= image_tag activity.user.image_name.url, class: "each_image" %>
-									<% else %>
-										<%= image_tag "user_images/default_user.png", class: "each_image" %>
-									<% end %>
-
-									<%= link_to activity.user.name, user_path(activity.user), class: "dashboard_list" %>
-									
-									<% if activity.action_type == "Lesson" %>
-										 learned <%= activity.action.category.title %>
-									<% else %>
-										 followed <%= link_to activity.action.followed.name, user_path(activity.action.followed), class: "dashboard_list" %>
-									<% end %>
-								</div>
-								<div class="col-md-4">
-									<div class="text-right activity_time" >
-										<%= time_ago_in_words(activity.created_at) %> ago
-									</div>
-								</div>
-							</div>
-						</div>
-				<% end %>
+				<%= render @activities %>
 			</div>
 	</div>
 </div>
