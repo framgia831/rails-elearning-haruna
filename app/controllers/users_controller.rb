@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			log_in @user
-			redirect_to user_path(@user)
+			redirect_to home_path
 		else
 			render "new"
 		end
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find_by(id: params[:id])
 		@admin_user = User.find_by(admin: true)
+		@activities = @user.activities.all.order(created_at: :desc)
 	end
 
 	def edit
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
 
     redirect_to user_path(@user)
 	end
-
+	
 	private
 		def user_params
 			params.require(:user).permit(:name, :email, :password, :password_confirmation, :image_name)

@@ -13,7 +13,7 @@ User.create!(name: "Haruna",
 						admin: true)
 
 30.times do |n|
-	title = Faker::Lovecraft.tome
+	title = Faker::Lovecraft.deity
 	description = Faker::Lovecraft.sentence
 	category = Category.create!(
 															title: title,
@@ -21,7 +21,7 @@ User.create!(name: "Haruna",
 															)
 
 	5.times do
-		word = category.words.build(content: Faker::Lovecraft.deity)
+		word = category.words.build(content: Faker::Lorem.word)
 	
 			3.times do
 				word.choices.build(content: Faker::Lovecraft.word)

@@ -7,9 +7,11 @@ Rails.application.routes.draw do
  delete "/logout", to: "sessions#destroy"
  get "/users/:id/edit", to: "users#edit"
  get "/categories", to: "lessons#index"
+ get "/home", to: "activities#home"
 
  resources :users, except: :new
  resources :relationships, only: [:create, :destroy]
+ resources :activities
 
  resources :lessons, except: :index do
  	resources :answers
