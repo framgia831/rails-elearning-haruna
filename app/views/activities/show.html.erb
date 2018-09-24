@@ -21,7 +21,7 @@
 					<th width="100">Answer</th>
 				</tr>
 
-				<% @user.answers.each do |answer| %>
+				<% @answers.each do |answer| %>
 					<tr>
 						<td width="100">
 							<%= answer.word.content %>
@@ -32,6 +32,7 @@
 					</tr>
 				<% end %>
 			</table>
+			<%= paginate @answers %>
 		</div>
 
 	</div>

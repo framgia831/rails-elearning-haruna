@@ -24,7 +24,7 @@
 					</tr>
 				<% end %>
 			</table>
-
+			<%= paginate @categories %>
 			<%= link_to "Back", user_path(current_user), class: "index_list" %>
 		</div>
 	</div>
