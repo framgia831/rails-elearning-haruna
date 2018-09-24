@@ -4,7 +4,7 @@ class Admin::WordsController < ApplicationController
 
 	def index
 		@category = Category.find(params[:category_id])
-		@words = @category.words.all
+		@words = @category.words.page(params[:page]).per(8)
 	end
 
 	def new

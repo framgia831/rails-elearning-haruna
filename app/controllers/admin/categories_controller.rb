@@ -3,7 +3,7 @@ class Admin::CategoriesController < ApplicationController
 	include UsersHelper
 
 	def index
-		@categories = Category.all
+		@categories = Category.page(params[:page]).per(8)
 	end
 
 	def new
