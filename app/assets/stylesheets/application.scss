@@ -83,6 +83,7 @@ body {
 /* Footer */
 
 .footer_border {
+	margin-top: 20px;
 	color: #C7C6C7;
 }
 
@@ -252,6 +253,7 @@ body {
 	height: 50px;
 	border-radius: 50%;
 	box-shadow: 0 0 2px #C7C6C7;
+	margin-right: 8px;
 }
 
 .dashboard_list {
@@ -265,3 +267,32 @@ body {
 	color: #0cc;
 }
 
+
+/* Pagenation */
+
+.pagination a, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  color: #48453D;
+}
+
+.pagination a:hover {
+	background-color: #ECE9E6;
+  transition: background-color .4s;
+}
+
+ .pagination span.current {
+ 	float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+	background-color: #AFE4E8;
+	color: #FFFEFA;
+}
+
+.pagination {
+	display: table;
+  margin: 8px auto;
+}

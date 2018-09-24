@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 	before_action :require_login, except: [:new, :create]
 
 	def index
-		@users = User.all
+		@users = User.page(params[:page]).per(8)
 	end
 
 	def new
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find_by(id: params[:id])
 		@admin_user = User.find_by(admin: true)
-		@activities = @user.activities.all.order(created_at: :desc)
+		@activities = @user.activities.all.order(created_at: :desc).page(params[:page]).per(5)
 	end
 
 	def edit
