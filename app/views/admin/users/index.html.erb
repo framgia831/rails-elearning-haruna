@@ -15,9 +15,9 @@
 						<td width="150" class="admin_list"><%= user.name %></td>
 						<td width="240"><%= user.email %></td>
 						<td width="150" class="text-center">
-							<% if user.id == 1 %>
+							<% if user == current_user %>
 								<b>Admin</b>
-							<% elsif user.admin == true %>
+							<% elsif user.admin? %>
 								<%= button_to "Remove", admin_user_path(user), method: :delete, class: "btn btn-info admin_btn" %>
 							<% else %>
 								<%= button_to "Add", admin_user_path(user), method: :patch, class: "btn btn-outline-info admin_btn" %>
