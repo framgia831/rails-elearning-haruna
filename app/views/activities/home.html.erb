@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-4 p-5 mx-auto text-center">
+
+		<h1 class="title">Dashboard</h1>
+		
+		<%= user_image(current_user, class: "dashboard_image") %>
+
+		<div class="user_name mt-2">
+			<%= current_user.name %>
+		</div>
+	
+		<div class="mt-3">
+			<%= link_to "learned #{current_user.answers.count} words", activity_path(current_user), class: "dashboard_list" %>
+		</div>
+		<div class="mt-3">
+			<%= link_to "learned #{current_user.lessons.count} lessons", categories_path, class: "dashboard_list" %>
+		</div>
+
+		
+	</div>
+
+	<div class="col-md-8 p-5">
+		<h1 class="title">Activities</h1>
+
+			<div class="activity">
+				<%= render @activities %>
+			</div>
+	</div>
+</div>

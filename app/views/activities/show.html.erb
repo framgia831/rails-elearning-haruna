@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-md-4 p-5 mx-auto text-center">
+
+		<h1 class="title">Dashboard</h1>
+		
+		<%= user_image(current_user, class: "dashboard_image")%>
+
+		<div class="user_name mt-2">
+			<%= current_user.name %>
+		</div>
+		
+	</div>
+
+	<div class="col-md-8 p-5">
+		<h1 class="title">Words Learned</h1>
+
+		<div class="row index">
+			<table class="table table-bordered index_table">
+				<tr>
+					<th width="100">Word</th>
+					<th width="100">Answer</th>
+				</tr>
+
+				<% @user.answers.each do |answer| %>
+					<tr>
+						<td width="100">
+							<%= answer.word.content %>
+						</td>
+						<td width="100">
+							<%= answer.word.correct_answer.content %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+
+	</div>
+</div>
