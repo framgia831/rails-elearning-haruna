@@ -37,12 +37,12 @@ class UsersController < ApplicationController
 	end
 
 	def followers
-		@user = User.find_by(params[:id])
+		@user = User.find(params[:user_id])
 		@users = @user.followers.page(params[:page]).per(8)
 	end
 
 	def following
-		@user = User.find_by(params[:id])
+		@user = User.find(params[:user_id])
 		@users = @user.following.page(params[:page]).per(8)
 	end
 	
