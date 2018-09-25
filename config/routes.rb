@@ -10,8 +10,7 @@ Rails.application.routes.draw do
  get "/home", to: "activities#home"
 
  resources :users, except: :new do
- 	get "/followers", to: "users#followers"
- 	get "/following", to: "users#following"
+ 	member { get :followers, :following }
  end
 
  resources :relationships, only: [:create, :destroy]
