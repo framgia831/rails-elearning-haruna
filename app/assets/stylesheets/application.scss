@@ -296,3 +296,30 @@ body {
 	display: table;
   margin: 8px auto;
 }
+
+
+/* Admin */
+
+.admin_btn {
+	width: 100px;
+	height: 35px;
+	padding-bottom: 9px;
+}
+
+.admin_list {
+	font-family: 'Megrim', serif;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.admin_choice {
+	width: 300px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.admin_choice p {
+	display: inline-block;
+	text-align: left;
+	word-break: break-all;
+}

@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find_by(id: params[:id])
-		@admin_user = User.find_by(admin: true)
 		@activities = @user.activities.all.order(created_at: :desc).page(params[:page]).per(5)
 	end
 

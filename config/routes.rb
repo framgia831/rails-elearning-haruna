@@ -18,6 +18,8 @@ Rails.application.routes.draw do
  end
 
  namespace :admin do
+ 	resources :users
+ 	get "/home", to: "users#home"
  	resources :categories do
  		resources :words do
  			resources :choices

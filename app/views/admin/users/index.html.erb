@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1 class="title">Administer Users</h1>
+
+		<div class="row index">
+			<table class="table table-bordered index_table">
+				<tr>
+					<th width="100">Name</th>
+					<th width="310">Email</th>
+					<th width="130">Admin</th>
+				</tr>
+				
+				<% @users.each do |user| %>
+					<tr>
+						<td width="150" class="admin_list"><%= user.name %></td>
+						<td width="240"><%= user.email %></td>
+						<td width="150" class="text-center">
+							<% if user == current_user %>
+								<b>Admin</b>
+							<% elsif user.admin? %>
+								<%= button_to "Remove", admin_user_path(user), method: :delete, class: "btn btn-info admin_btn" %>
+							<% else %>
+								<%= button_to "Add", admin_user_path(user), method: :patch, class: "btn btn-outline-info admin_btn" %>
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+			<%= paginate @users %>
+		</div>
+		<%= link_to "Back", admin_home_path, class: "index_list" %>
+	</div>
+</div>

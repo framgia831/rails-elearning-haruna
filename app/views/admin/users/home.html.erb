@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<h1 class="title">Administration</h1>
+		
+		<div class="admin_choice mt-5">
+			<%= link_to "Categories", admin_categories_path, class: "btn btn-info btn_settings" %>
+			<p class="mt-3">You can change the categories, desc-riptions, words, answers and choices.</p>
+		</div>
+		<div class="admin_choice">
+			<%= link_to "Users", admin_users_path, class: "btn btn-info btn_settings" %>
+			<p class="mt-3">You can add or remove the administ-ration to users.</p>
+		</div>
+
+	<%= link_to "Back", user_path(current_user), class: "index_list" %>	
+	</div>
+</div>
