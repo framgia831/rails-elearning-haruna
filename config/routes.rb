@@ -9,7 +9,11 @@ Rails.application.routes.draw do
  get "/categories", to: "lessons#index"
  get "/home", to: "activities#home"
 
- resources :users, except: :new
+ resources :users, except: :new do
+ 	get "/followers", to: "users#followers"
+ 	get "/following", to: "users#following"
+ end
+
  resources :relationships, only: [:create, :destroy]
  resources :activities
 

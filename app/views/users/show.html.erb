@@ -14,11 +14,11 @@
 		<hr style="width: 200px;">
 
 		<div class="d-inline-block px-4 mt-2">
-			<%= @user.following.count %>
+			<%= link_to @user.following.count, user_following_path(@user) %>
 			<p>Following</p>
 		</div>
 		<div class="d-inline-block px-4 mt-2">
-			<%= @user.followers.count %>
+			<%= link_to @user.followers.count, user_followers_path(@user) %>
 			<p>Followers</p>
 		</div>
 
