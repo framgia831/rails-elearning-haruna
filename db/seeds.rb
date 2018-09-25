@@ -13,7 +13,7 @@ User.create!(name: "Haruna",
 						admin: true)
 
 30.times do |n|
-	title = Faker::Lovecraft.deity
+	title = Faker::Lovecraft.tome
 	description = Faker::Lovecraft.sentence
 	category = Category.create!(
 															title: title,
@@ -31,4 +31,17 @@ User.create!(name: "Haruna",
 		word.choices[random].correct = true
 		word.save
 	end
+end
+
+30.times do |n|
+	name = Faker::Lovecraft.deity
+	email = Faker::Internet.email
+	password = "password"
+	password_confirmation = "password"
+	User.create!(
+							name: name,
+							email: email,
+							password: password,
+							password_confirmation: password_confirmation
+							)
 end

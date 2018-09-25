@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	before_action :require_login, except: [:new, :create]
+	before_action :require_login, except: [:new, :create, :index]
+	before_action :correct_user, only: [:edit, :update]
 
 	def index
 		@users = User.page(params[:page]).per(8)
@@ -56,6 +57,15 @@ class UsersController < ApplicationController
         flash[:notice] = "Please log in."
         redirect_to root_url
       end
+    end
+
+    def correct_user
+    	@user = User.find(params[:id])
+
+    	unless @user == current_user
+    		flash[:notice] = "Invalid access."
+    		redirect_to user_path(@user)
+    	end
     end
 
 end
