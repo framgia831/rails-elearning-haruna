@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+	before_action :require_login
 
 	def index
 		@categories = Category.page(params[:page]).per(6)

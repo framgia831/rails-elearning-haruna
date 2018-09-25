@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	before_action :require_login, except: [:new, :create]
+	before_action :require_login, except: [:new, :create, :index]
+	before_action :correct_user, only: [:edit, :update]
 
 	def index
 		@users = User.page(params[:page]).per(8)
