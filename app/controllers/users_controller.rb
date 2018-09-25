@@ -59,13 +59,4 @@ class UsersController < ApplicationController
       end
     end
 
-    def correct_user
-    	@user = User.find(params[:id])
-
-    	unless @user == current_user
-    		flash[:notice] = "Invalid access."
-    		redirect_to user_path(@user)
-    	end
-    end
-
 end
