@@ -7,7 +7,7 @@ class Lesson < ApplicationRecord
 	has_many :choices, through: :answers
 	has_many :activity, as: :action
 
-	# def activity_create
-	# 	activity.create(user: current_user)
-	# end
+	def correct_answers
+		choices.where(correct: true)
+	end
 end

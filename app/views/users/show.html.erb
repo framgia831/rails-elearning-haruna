@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-4 p-5 mx-auto text-center">
+	<div class="col-md-3 p-5 mx-auto text-center">
 		
 		<% if @user.image_name? %>
 			<%= image_tag @user.image_name.url, class: "user_image" %>
@@ -13,12 +13,12 @@
 
 		<hr style="width: 200px;">
 
-		<div class="d-inline-block px-4 mt-2">
-			<%= link_to @user.following.count, following_user_path(@user) %>
+		<div class="d-inline-block pr-2 mt-2">
+			<%= link_to @user.following.count, following_user_path(@user), class: "dashboard_list" %>
 			<p>Following</p>
 		</div>
-		<div class="d-inline-block px-4 mt-2">
-			<%= link_to @user.followers.count, followers_user_path(@user) %>
+		<div class="d-inline-block pl-2 mt-2">
+			<%= link_to @user.followers.count, followers_user_path(@user), class: "dashboard_list" %>
 			<p>Followers</p>
 		</div>
 
@@ -37,7 +37,7 @@
 				<%= link_to "Edit Profile", edit_user_path, class: 'btn btn-info btn_settings' %>
 			<% end %>
 			<div class="mt-2">
-			<% if current_user.admin? %>
+			<% if current_user.admin? && @user.admin? %>
 				<%= link_to "Administration", admin_home_path, class: 'btn btn-outline-info btn_settings' %>
 			<% end %>
 			</div>
@@ -45,9 +45,8 @@
 		
 	</div>
 
-	<div class="col-md-8 p-5">
+	<div class="col-md-9 p-5">
 		<h1 class="title">Activities</h1>
-
 			<div class="activity">
 				<%= render @activities %>
 				<%= paginate @activities %>

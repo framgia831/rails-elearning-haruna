@@ -7,7 +7,7 @@ class User < ApplicationRecord
 	has_many :activities
 	has_many :followeds
 	has_many :followers
-
+	
 	has_secure_password
 
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

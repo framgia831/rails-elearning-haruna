@@ -5,13 +5,17 @@
         <% end %>
 
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <%= link_to "Users", users_path, class: "nav-link" %>
-            </li>
             <% if current_user %>
                 <li class="nav-item">
                     <%= link_to "Home", home_path, class: "nav-link" %>
                 </li>
+            <% end %>
+
+            <li class="nav-item">
+                <%= link_to "Users", users_path, class: "nav-link" %>
+            </li>
+            
+            <% if current_user %>
                 <li class="nav-item">
                     <%= link_to "Lessons", categories_path, class: "nav-link" %>
                 </li>

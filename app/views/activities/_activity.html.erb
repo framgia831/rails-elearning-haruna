@@ -1,21 +1,21 @@
-<div class="media p-2">
-	<div class="media-body row pb-3">
-		<div class="col-md-8">
-			<%= user_image(current_user) %>
+<div class="media p-1">
+	<%= user_image(current_user) %>
 
-			<%= link_to activity.user.name, user_path(activity.user), class: "dashboard_list" %>
-			
-			<% if activity.action.is_a?(Lesson) %>
-				 learned <%= link_to activity.action.category.title, lesson_path(activity.action), class: "dashboard_list" %>
-			<% else %>
-				 followed <%= link_to activity.action.followed.name, user_path(activity.action.followed), class: "dashboard_list" %>
-			<% end %>
-		</div>
-		<div class="col-md-4">
-			<div class="text-right activity_time" >
-				<%= time_ago_in_words(activity.created_at) %> ago
-			</div>
-		</div>
-	</div>
-</div>
+	<div class="media-body activity_content">
+		<%= link_to activity.user.name, user_path(activity.user), class: "dashboard_list" %>
 		
+		<% if activity.action.is_a?(Lesson) %>
+			learned <%= activity.action.correct_answers.count %> of <%= activity.action.category.words.count %> words
+			in <%= link_to activity.action.category.title, lesson_path(activity.action), class: "dashboard_list" %>
+		<% else %>
+			 followed <%= link_to activity.action.followed.name, user_path(activity.action.followed), class: "dashboard_list" %>
+		<% end %>
+
+	</div>
+
+
+	<div class="text-right activity_time" >
+		<%= time_ago_in_words(activity.created_at) %> ago
+	</div>
+
+</div>

@@ -3,6 +3,8 @@ class ActivitiesController < ApplicationController
 
 	def home
 		@activities = current_user.activity_feed.order(created_at: :desc).page(params[:page]).per(5)
+		@user = User.find_by(id: current_user)
+		@lesson = @user.lessons
 	end
 
 	def show

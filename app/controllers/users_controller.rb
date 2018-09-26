@@ -22,8 +22,9 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find_by(id: params[:id])
+		@user = User.find(params[:id])
 		@activities = @user.activities.all.order(created_at: :desc).page(params[:page]).per(5)
+		@lessons = @user.lessons
 	end
 
 	def edit
