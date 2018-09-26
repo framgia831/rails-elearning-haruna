@@ -20,7 +20,6 @@ class LessonsController < ApplicationController
 	def show
 		@lesson = Lesson.find(params[:id])
 		@category = @lesson.category
-		@answer = @lesson.answers
 	end
 
 end

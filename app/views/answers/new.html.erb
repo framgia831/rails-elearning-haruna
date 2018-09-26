@@ -3,6 +3,9 @@
 		<h1 class="title"><%= @category.title %></h1>
 
 		<div class="index">
+			<div class="lesson_count">
+				<%= @lesson.words.count + 1 %> / <%= @category.words.count %>
+			</div>
 			<div class="lesson_word">
 				<%= @word.content %>
 			</div>

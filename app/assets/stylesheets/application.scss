@@ -123,6 +123,19 @@ body {
 	font-size: 13px;
 }
 
+.activity_content {
+	line-height: 50px;
+}
+
+.each_image {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	box-shadow: 0 0 2px #C7C6C7;
+	margin-right: 20px;
+	margin-bottom: 18px;
+}
+
 
 /* User page */
 
@@ -237,6 +250,12 @@ body {
 	padding-bottom: 25px;
 }
 
+.lesson_count {
+	font-weight: 500;
+	font-size: 15px;
+	text-align: center;
+}
+
 
 /* Dashboard */
 
@@ -248,18 +267,11 @@ body {
 	margin-top: 30px;
 }
 
-.each_image {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	box-shadow: 0 0 2px #C7C6C7;
-	margin-right: 8px;
-}
-
 .dashboard_list {
 	text-decoration: none;
 	transition: .4s;
 	color: #8D8980;
+	height: 30px;
 }
 
 .dashboard_list:hover {

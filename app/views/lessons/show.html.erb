@@ -2,6 +2,10 @@
 	<div class="offset-md-3 col-md-6">
 		<h1 class="title"><%= @category.title %></h1>
 
+		<div class="lesson_count mt-4">
+			Total correct answers are <%= @lesson.correct_answers.count %> / <%= @category.words.count %>
+		</div>
+
 		<div class="row index">
 			<table class="table table-bordered index_table">
 				<tr>
@@ -29,7 +33,5 @@
 				<% end %>
 			</table>
 		</div>
-		
-		<%= link_to "Back", categories_path, class: "index_list" %>
 	</div>
 </div>
