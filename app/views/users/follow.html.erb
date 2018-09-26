@@ -1,18 +1,18 @@
 <div class="row">
 	<div class="offset-md-2 col-md-8 mb-4">
-		<h1 class="title">Following</h1>
+		<h1 class="title"><%= @title %></h1>
 
 		<div class="row index">
 			<% @users.each do |user| %>
 				<div class="col-md-6 index_each">
 					
-					<% if user.followed.image_name? %>
-						<%= image_tag user.followed.image_name.url, class: "index_image" %>
+					<% if user.image_name? %>
+						<%= image_tag user.image_name.url, class: "index_image" %>
 					<% else %>
 						<%= image_tag "user_images/default_user.png", class: "index_image" %>
 					<% end %>
 					
-					<%= link_to user.followed.name, user_url(user), class: "index_list" %>
+					<%= link_to user.name, user_url(user), class: "index_list" %>
 				</div>
 			<% end %>
 		</div>

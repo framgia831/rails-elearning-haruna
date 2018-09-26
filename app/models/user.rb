@@ -5,8 +5,14 @@ class User < ApplicationRecord
 	has_many :words, through: :lessons
 	has_many :answers, through: :lessons
 	has_many :activities
-	has_many :followeds
-	has_many :followers
+	has_many :active_relationships, class_name:  "Relationship",
+                                  foreign_key: "follower_id",
+                                  dependent:   :destroy
+  has_many :passive_relationships, class_name: "Relationship",
+																	foreign_key: "followed_id",
+																	dependent:   :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
 	
 	has_secure_password
 
@@ -16,14 +22,6 @@ class User < ApplicationRecord
 	validates :email, presence: true,
 										format: { with: EMAIL_REGEX },
 										uniqueness: true
-
-	def followers
-		Relationship.where(followed_id: id)
-	end
-
-	def following
-		Relationship.where(follower_id: id)
-	end
 
 	def relationship(other_user)
 		Relationship.find_by(
