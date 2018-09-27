@@ -9,12 +9,12 @@
 	font-weight: 400;
 }
 
-.nav-link {
+.navbar .nav-link {
 	color: #FFFEFA;
 	transition: .4s;
 }
 
-.nav-link:hover {
+.navbar .nav-link:hover {
 	color: #0cc;
 }
 
@@ -223,6 +223,34 @@ body {
 	left: 60%;
 }
 
+.tab_settings {
+	width: 130px;
+	height: 45px;
+	padding-top: 9px;
+	text-align: center;
+	color: #FFFEFA;
+}
+
+.nav-pills .nav-link {
+	font-size: 16px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.nav-pills .nav-link.active {
+	background-color: #AFE4E8;
+	color: #FFFEFA;
+}
+
+.nav-pills .nav-link {
+	color: #8D8980;
+	transition: .4s;
+}
+
+.nav-pills .nav-link:hover {
+	color: #0cc;
+}
+
 
 /* Choices */
 
@@ -295,7 +323,7 @@ body {
   transition: background-color .4s;
 }
 
- .pagination span.current {
+.pagination span.current {
  	float: left;
   padding: 0 14px;
   line-height: 38px;
