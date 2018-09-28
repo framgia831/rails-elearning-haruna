@@ -3,12 +3,14 @@ class CategoriesController < ApplicationController
 
 	def index
 		if params[:lesson] == "1"
-			@categories = current_user.categories.page(params[:page]).per(6)
+			@categories = current_user.categories
 		elsif params[:lesson] == "0"
-			@categories = Category.where.not(id: current_user.category_ids).page(params[:page]).per(6)
+			@categories = Category.where.not(id: current_user.category_ids)
 		else
-			@categories = Category.page(params[:page]).per(6)
+			@categories = Category.all
 		end
+
+		@categories = @categories.joins(:words).group(:id).order(created_at: :desc).page(params[:page]).per(6)
 	end
 
 end
