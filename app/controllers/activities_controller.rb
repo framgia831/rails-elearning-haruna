@@ -9,10 +9,9 @@ class ActivitiesController < ApplicationController
 
 	def show
 		@user = current_user
-
 		@category_id = params[:categories]
 
-		if @category_id == ""
+		if @category_id.empty?
 			@answers = @user.answers.page(params[:page]).per(10)
 		else
 			@answers = @user.answers.joins(:lesson).where("lessons.category_id": @category_id).page(params[:page]).per(10)
