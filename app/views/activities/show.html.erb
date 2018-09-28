@@ -13,12 +13,14 @@
 
 	<div class="col-md-9 p-5">
 		<h1 class="title">Words Learned</h1>
-
-		<%= form_tag activity_path, method: :get do %>
-    		<%= select_tag 'categories', 
-    					options_for_select(@category_choices, selected: @category_id),
-    					include_blank: "All",
-    					onchange: 'this.form.submit()' %>
+		
+		<div class="text-center mt-4">
+			<%= form_tag activity_path, method: :get do %>
+	    		<%= select_tag 'categories', 
+	    					options_for_select(@category_choices, selected: @category_id),
+	    					include_blank: "All",
+	    					onchange: 'this.form.submit()' %>
+		</div>
 
 		<div class="row index">
 			<table class="table table-bordered index_table">
