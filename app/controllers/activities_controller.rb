@@ -9,7 +9,16 @@ class ActivitiesController < ApplicationController
 
 	def show
 		@user = current_user
-		@answers = @user.answers.page(params[:page]).per(5)
+
+		@category_id = params[:categories]
+
+		if @category_id == ""
+			@answers = @user.answers.page(params[:page]).per(10)
+		else
+			@answers = @user.answers.joins(:lesson).where("lessons.category_id": @category_id).page(params[:page]).per(10)
+		end
+
+		@category_choices = @user.categories.map{|category| [category.title, category.id]}
 	end
 
 	private
