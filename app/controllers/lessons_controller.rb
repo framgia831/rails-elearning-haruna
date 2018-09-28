@@ -1,9 +1,4 @@
 class LessonsController < ApplicationController
-	before_action :require_login
-
-	def index
-		@categories = Category.page(params[:page]).per(6)
-	end
 
 	def create
 		@category = Category.find(params[:category_id])
